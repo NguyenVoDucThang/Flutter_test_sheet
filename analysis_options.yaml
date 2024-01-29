@@ -26,5 +26,6 @@ linter:
     prefer_single_quotes: true # Uncomment to enable the `prefer_single_quotes` rule
     always_put_required_named_parameters_first: false
     sort_constructors_first: true
+    prefer_const_declarations: true
 # Additional information about this file can be found at
 # https://dart.dev/guides/language/analysis-options
