@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_test_sheet/global/my_router.dart';
 import 'package:flutter_test_sheet/global/my_router_observer.dart';
-import 'package:flutter_test_sheet/presentation/view/home.dart';
+import 'package:flutter_test_sheet/presentation/home_screen/home.dart';
 
 void main() {
+  SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual, overlays: []);
+
   runApp(const MyApp());
 }
 
@@ -16,7 +19,8 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      onGenerateRoute: (RouteSettings settings) => MyRouter.generateRoute(settings),
+      onGenerateRoute: (RouteSettings settings) =>
+          MyRouter.generateRoute(settings),
       navigatorObservers: [MyRouterObserver()],
       home: const HomeScreen(),
     );

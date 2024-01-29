@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_test_sheet/presentation/view/home.dart';
+import 'package:flutter_test_sheet/presentation/history_screen/history_screen.dart';
+import 'package:flutter_test_sheet/presentation/home_screen/home.dart';
 
 class MyRouter {
   static const String home = '/home';
+  static const String historyScreen = '/historyScreen';
 
   static PageRouteBuilder _buildRouteNavigationWithoutEffect(
       RouteSettings settings, Widget widget) {
@@ -19,6 +21,11 @@ class MyRouter {
         return _buildRouteNavigationWithoutEffect(
           settings,
           const HomeScreen(),
+        );
+      case historyScreen:
+        return _buildRouteNavigationWithoutEffect(
+          settings,
+          const HistoryScreen(),
         );
       default:
         return _buildRouteNavigationWithoutEffect(
